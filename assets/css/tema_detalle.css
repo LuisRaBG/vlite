@@ -1,0 +1,117 @@
+/* --- DISEÑO DE LA VISTA DE TEMA (LISTA DE LECCIONES) --- */
+
+.tema-header {
+    background: var(--color-blanco);
+    border-radius: 20px;
+    padding: 48px 40px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.02);
+    margin-bottom: 48px;
+    border-left: 8px solid var(--color-secundario); /* Acento verde oscuro */
+    position: relative;
+}
+
+.badge-tag-tema {
+    display: inline-block;
+    background-color: var(--color-beige);
+    color: var(--color-primario);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 50px;
+    margin-bottom: 16px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+#titulo-tema {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--color-primario);
+    margin-bottom: 12px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+.sub-tema {
+    font-size: 1.1rem;
+    color: var(--color-texto-muted);
+    margin: 0;
+}
+
+/* --- SECCIÓN DE LECCIONES --- */
+.section-header-tema {
+    border-bottom: 2px solid var(--color-borde);
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+}
+
+.section-header-tema h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-texto-main);
+}
+
+/* Lista contenedora */
+.lessons-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Enlaces transformados en filas de interacción premium */
+.lessons-list li a {
+    display: flex;
+    align-items: center;
+    padding: 20px 28px;
+    background: var(--color-blanco);
+    border: 1px solid var(--color-borde);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--color-texto-main);
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+    position: relative;
+}
+
+/* Prefijo numérico o viñeta de lección estilizada */
+.lessons-list li a::before {
+    content: "📖";
+    margin-right: 16px;
+    font-size: 1.1rem;
+    transition: transform 0.25s ease;
+}
+
+/* Efecto al posar el mouse */
+.lessons-list li a:hover {
+    background-color: var(--color-blanco);
+    border-color: var(--color-primario);
+    color: var(--color-primario);
+    transform: translateX(8px); /* Desplazamiento lateral sutil */
+    box-shadow: 0 8px 20px rgba(27, 57, 106, 0.06);
+}
+
+/* Cambiar el comportamiento del icono interno en hover */
+.lessons-list li a:hover::before {
+    transform: scale(1.15);
+}
+
+/* Flecha al final de la fila indicando acción */
+.lessons-list li a::after {
+    content: "➔";
+    position: absolute;
+    right: 28px;
+    color: var(--color-acento-dorado);
+    font-size: 1rem;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.25s ease;
+}
+
+.lessons-list li a:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+    color: var(--color-acento-vino);
+}
