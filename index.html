@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma E-Learning | Inicio</title>
+    
+    <!-- Carga de estilos -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/inicio.css"> <!-- El nuevo CSS para esta vista -->
+</head>
+<body>
+    <!-- Menú de navegación (se ocultará inteligentemente en la raíz gracias a main.js) -->
+    <nav id="menu-global"></nav>
+    
+    <div class="app-container">
+        <!-- Banner Principal -->
+        <header class="home-hero">
+            <div class="hero-content">
+                <span class="badge-tag-light">Entorno Portátil Lite</span>
+                <h1>Bienvenido a la Plataforma</h1>
+                <p>Selecciona un programa de estudio para comenzar tu aprendizaje en este entorno virtual offline.</p>
+            </div>
+        </header>
+    
+        <!-- Grid de Cursos -->
+        <main class="courses-section">
+            <div class="section-header">
+                <h2>Cursos Disponibles</h2>
+            </div>
+            
+            <!-- El JS inyectará las tarjetas de los cursos aquí -->
+            <div id="lista-cursos" class="course-grid"></div>
+        </main>
+    </div>
+
+    <!-- Archivo de datos LOCAL global -->
+    <script src="manifest.js"></script>
+    <!-- Motor principal -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+/* --- DISEÑO PREMIUM E-LEARNING (DASHBOARD) --- */
+.app-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 32px;
+}
+
+/* --- Hero Section (Cabecera) --- */
+.hero-section {
+    background: var(--color-blanco);
+    border-radius: 24px;
+    padding: 70px 60px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.01);
+    margin-bottom: 60px;
+    border-top: 6px solid var(--color-primario);
+    position: relative;
+    overflow: hidden;
+    border-left: 1px solid var(--color-borde);
+    border-right: 1px solid var(--color-borde);
+    border-bottom: 1px solid var(--color-borde);
+}
+
+/* Glow sutil en la cabecera */
+.hero-section::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, rgba(27, 57, 106, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+    pointer-events: none;
+    border-radius: 50%;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+}
+
+.badge-tag {
+    display: inline-block;
+    background-color: rgba(232, 220, 200, 0.4); /* Beige semitransparente */
+    color: var(--color-acento-vino);
+    font-size: 0.8rem;
+    font-weight: 800;
+    padding: 8px 18px;
+    border-radius: 50px;
+    margin-bottom: 24px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 1px solid rgba(98, 19, 51, 0.15);
+}
+
+#titulo-curso {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--color-primario);
+    margin: 0 0 20px 0;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+#descripcion-curso {
+    font-size: 1.2rem;
+    color: var(--color-texto-muted);
+    line-height: 1.75;
+    margin: 0;
+}
+
+/* --- Título de Módulos --- */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--color-borde);
+}
+
+.section-header h2 {
+    font-size: 1.7rem;
+    font-weight: 800;
+    margin: 0;
+    color: var(--color-texto-main);
+    letter-spacing: -0.01em;
+    position: relative;
+}
+
+.section-header h2::after {
+    content: "";
+    position: absolute;
+    bottom: -22px;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-acento-vino);
+    border-radius: 2px;
+}
+
+.pill-counter {
+    background: linear-gradient(135deg, var(--color-secundario) 0%, #0c4a43 100%);
+    color: var(--color-blanco);
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 8px 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 47, 42, 0.15);
+    letter-spacing: 0.03em;
+}
+
+/* --- Grid de Módulos --- */
+.module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 30px;
+}
+
+/* --- Tarjetas de Módulo (UI Premium) --- */
+.module-card {
+    background: var(--color-blanco);
+    border: 1px solid var(--color-borde);
+    border-radius: 20px;
+    padding: 40px 35px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01);
+}
+
+/* Borde lateral animado */
+.module-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: linear-gradient(to bottom, var(--color-acento-dorado), var(--color-beige));
+    transform: scaleY(0);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: bottom;
+}
+
+/* Flecha animada */
+.module-card::after {
+    content: "→";
+    position: absolute;
+    bottom: 35px;
+    right: 35px;
+    color: var(--color-acento-dorado);
+    font-size: 1.5rem;
+    font-weight: 700;
+    opacity: 0;
+    transform: translateX(-15px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.module-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(0, 47, 42, 0.08); /* Sombra Verde Oscuro */
+    border-color: rgba(0, 47, 42, 0.15);
+}
+
+.module-card:hover::before {
+    transform: scaleY(1);
+}
+
+.module-card:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.module-number {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--color-acento-dorado);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.module-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-texto-main);
+    line-height: 1.45;
+    margin: 0;
+    padding-right: 24px;
+    transition: color 0.3s ease;
+}
+
+.module-card:hover .module-title {
+    color: var(--color-primario);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .app-container {
+        margin: 20px auto;
+        padding: 0 16px;
+    }
+    .hero-section {
+        padding: 40px 30px;
+        margin-bottom: 40px;
+    }
+    #titulo-curso {
+        font-size: 2.2rem;
+    }
+    #descripcion-curso {
+        font-size: 1.1rem;
+    }
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .section-header h2::after {
+        bottom: -17px;
+    }
+    .module-grid {
+        gap: 20px;
+        grid-template-columns: 1fr;
+    }
+    .module-card {
+        padding: 30px 25px;
+    }
+}
