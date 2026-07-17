@@ -85,6 +85,7 @@ function init() {
         const tema = CURSO_DATA.temas.find(t => t.id === temaId);
         
         if (tema) {
+            listaLecciones.innerHTML = '';
             tema.lecciones.forEach((l, i) => {
                 listaLecciones.innerHTML += `<li><a href="L${i + 1}/index.html">${l.titulo}</a></li>`;
             });
