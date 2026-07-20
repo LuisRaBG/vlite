@@ -43,7 +43,7 @@
 #titulo-curso {
     font-size: 2.6rem;
     font-weight: 800;
-    color: var(--color-primario);
+    color: var(--color-azul-obscuro);
     margin-bottom: 16px;
     line-height: 1.2;
     letter-spacing: -0.02em;
@@ -100,7 +100,6 @@
     transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Indicador de acento izquierdo animado */
 .module-card::before {
     content: "";
     position: absolute;
@@ -114,7 +113,6 @@
     transform-origin: bottom;
 }
 
-/* Icono de navegación sutil */
 .module-card::after {
     content: "➔";
     position: absolute;
@@ -127,10 +125,9 @@
     transition: all 0.3s ease;
 }
 
-/* Efectos al posar el cursor */
 .module-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 16px 32px rgba(0, 47, 42, 0.06);
+    box-shadow: 0 16px 32px rgba(0, 47, 42, 0.08);
     border-color: transparent;
 }
 

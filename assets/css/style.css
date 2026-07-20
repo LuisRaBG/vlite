@@ -10,6 +10,7 @@
     --color-texto-muted: #7A8B99;  /* Gris Slate */
     --color-texto-main: #2C3E50;   /* Gris Oscuro */
     --color-beige: #E8DCC8;        /* Beige cálido */
+    --color-azul-obscuro: #112341; /* Azul muy oscuro para cabeceras */
 }
 
 /* Reset y estructura base */
@@ -23,7 +24,7 @@ body {
     background-color: var(--color-fondo);
     color: var(--color-texto-main);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    line-height: 1.5;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -32,4 +33,38 @@ body {
     max-width: 1140px;
     margin: 40px auto;
     padding: 0 24px;
+}
+
+/* --- ESTILOS EDITORIALES PARA LECCIONES (Lectura) --- */
+.lesson-container {
+    max-width: 800px;
+    margin: 40px auto 80px auto;
+    padding: 50px;
+    background-color: var(--color-blanco);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--color-borde);
+}
+
+.lesson-container h1 {
+    font-size: 2.5rem;
+    color: var(--color-azul-obscuro);
+    margin-bottom: 30px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    border-bottom: 2px solid var(--color-fondo);
+    padding-bottom: 20px;
+}
+
+.lesson-container h2 {
+    font-size: 1.5rem;
+    color: var(--color-primario);
+    margin: 40px 0 20px 0;
+}
+
+.lesson-container p {
+    font-size: 1.15rem;
+    color: var(--color-texto-main);
+    margin-bottom: 20px;
+    line-height: 1.8;
 }
