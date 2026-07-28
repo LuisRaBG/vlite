@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido al Curso</title>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/curso_detalle.css">
+</head>
+<body>
+    <nav id="menu-global"></nav>
+    
+    <div class="app-container">
+        <!-- Cabecera del Curso (Hero Section) -->
+        <header class="hero-section">
+            <div class="hero-content">
+                <span class="badge-tag">Programa de Estudio</span>
+                <h1 id="titulo-curso">Cargando curso...</h1>
+                <p id="descripcion-curso">Preparando el entorno de aprendizaje.</p>
+            </div>
+        </header>
+    
+        <!-- Grid de Módulos -->
+        <main class="modules-section">
+            <div class="section-header">
+                <h2>Contenido del Curso</h2>
+                <span id="contador-temas" class="pill-counter">...</span>
+            </div>
+            
+            <!-- El JS inyectará las tarjetas aquí -->
+            <div id="lista-temas" class="module-grid"></div>
+        </main>
+    </div>
+
+    <!-- Cargamos el motor principal -->
+    <script src="../MEP/manifest.js"></script>
+    
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>
