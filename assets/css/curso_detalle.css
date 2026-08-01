@@ -1,159 +1,234 @@
-/* --- HERO DEL DETALLE DE CURSO --- */
-.hero-section {
-    background: var(--color-blanco);
-    border-radius: 24px;
-    padding: 56px 48px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.02);
-    margin-bottom: 56px;
-    border-top: 6px solid var(--color-primario);
-    position: relative;
+/* ==========================================================================
+   VISTA CURSO DETALLE / CATÁLOGO DE MÓDULOS (Fondo Blanco + Tarjetas Azul Claro)
+   ========================================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body.dashboard-body {
+    background-color: var(--color-azul-obscuro);
+    color: var(--color-texto-main);
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Layout General Estático */
+.dashboard-layout {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--color-azul-obscuro);
     overflow: hidden;
 }
 
-.hero-section::after {
-    content: "";
-    position: absolute;
-    top: -40%;
-    right: -5%;
-    width: 360px;
-    height: 180%;
-    background: radial-gradient(circle, rgba(27, 57, 106, 0.03) 0%, rgba(255, 255, 255, 0) 70%);
-    pointer-events: none;
+/* --------------------------------------------------------------------------
+   1. ÁREA DE CONTENIDO Y TOP HEADER
+   -------------------------------------------------------------------------- */
+.main-content {
+    flex-grow: 1;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-blanco);
+    overflow: hidden;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 840px;
+/* --------------------------------------------------------------------------
+   2. COLUMNA DERECHA (FONDO BLANCO + SCROLL VERTICAL)
+   -------------------------------------------------------------------------- */
+.content-body {
+    background-color: var(--color-blanco);
+    padding: 24px 32px 40px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: calc(100vh - 52px);
+    width: 100%;
+    overflow-y: auto;
+    scroll-behavior: smooth;
 }
 
-.badge-tag {
+.content-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.content-body::-webkit-scrollbar-track {
+    background: #F0F2F5;
+}
+
+.content-body::-webkit-scrollbar-thumb {
+    background: #C6DBF9;
+    border-radius: 4px;
+}
+
+/* Card del Hero / Encabezado del Curso */
+.catalog-hero-card {
+    background-color: #EBF0F7;
+    border-radius: 14px;
+    padding: 24px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    border: 1px solid var(--color-borde);
+    width: 100%;
+}
+
+.hero-titles {
+    flex-grow: 1;
+}
+
+.badge-tag-light {
     display: inline-block;
-    background-color: var(--color-beige);
-    color: var(--color-acento-vino);
-    font-size: 0.8rem;
-    font-weight: 700;
-    padding: 6px 16px;
-    border-radius: 50px;
-    margin-bottom: 20px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    background-color: #D3DEEE;
+    color: var(--color-texto-muted);
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
 }
 
-#titulo-curso {
-    font-size: 2.6rem;
+.hero-titles h1 {
+    font-size: 1.8rem;
     font-weight: 800;
     color: var(--color-azul-obscuro);
-    margin-bottom: 16px;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 8px;
 }
 
-#descripcion-curso {
-    font-size: 1.15rem;
-    color: var(--color-texto-muted);
-    line-height: 1.7;
+.hero-titles p {
+    font-size: 0.85rem;
+    color: var(--color-texto-main);
+    line-height: 1.6;
+    width: 100%; /* Ocupa todo el ancho disponible */
 }
 
-/* --- CONTROLADORES DE LA SECCIÓN --- */
-.section-header {
+.catalog-badge-counter {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #DDE4EE;
+    color: var(--color-primario);
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 6px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Barra de Filtros */
+.filter-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 32px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--color-borde);
+    margin: 4px 0;
 }
 
-.section-header h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-texto-main);
+.filter-pills {
+    display: flex;
+    gap: 8px;
 }
 
-.pill-counter {
-    background-color: var(--color-secundario);
-    color: var(--color-blanco);
-    font-weight: 600;
-    font-size: 0.85rem;
+.pill-item {
+    background-color: #EBF0F7;
+    color: var(--color-texto-muted);
+    border: 1px solid var(--color-borde);
     padding: 6px 16px;
-    border-radius: 50px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
-/* --- CONTENEDOR Y TARJETAS DE MÓDULOS --- */
+.pill-item:hover, .pill-item.active {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    border-color: var(--color-primario);
+}
+
+.filter-dropdown {
+    color: var(--color-texto-muted);
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   3. TARJETAS DE MÓDULOS (Fondo Azul Claro + Bordes Suaves)
+   -------------------------------------------------------------------------- */
+.catalog-module-grid,
 .module-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    width: 100%;
 }
 
+/* Tarjeta de Módulo */
 .module-card {
-    background: var(--color-blanco);
+    background-color: #EBF0F7;
+    border-radius: 14px;
     border: 1px solid var(--color-borde);
-    border-radius: 20px;
-    padding: 36px 32px;
     text-decoration: none;
     display: flex;
     flex-direction: column;
-    position: relative;
     overflow: hidden;
-    transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.module-card::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 6px;
-    background-color: var(--color-acento-dorado);
-    transform: scaleY(0);
-    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-    transform-origin: bottom;
-}
-
-.module-card::after {
-    content: "➔";
-    position: absolute;
-    bottom: 36px;
-    right: 32px;
-    color: var(--color-acento-dorado);
-    font-size: 1.1rem;
-    opacity: 0;
-    transform: translateX(-12px);
-    transition: all 0.3s ease;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .module-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 32px rgba(0, 47, 42, 0.08);
-    border-color: transparent;
+    transform: translateY(-4px);
+    border-color: var(--color-primario);
+    box-shadow: 0 8px 16px rgba(27, 57, 106, 0.08);
 }
 
-.module-card:hover::before {
-    transform: scaleY(1);
-}
-
-.module-card:hover::after {
-    opacity: 1;
-    transform: translateX(0);
+/* Cabecera visual de la Tarjeta */
+.module-card::before {
+    content: "";
+    display: block;
+    height: 120px;
+    background-color: #CBD6E6;
+    background-image: linear-gradient(135deg, rgba(27,57,106,0.7), rgba(0,47,42,0.7)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=500&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
 }
 
 .module-number {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--color-texto-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 12px;
-    display: block;
+    display: inline-block;
+    background-color: #D3DEEE;
+    color: var(--color-primario);
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin: 14px 16px 6px 16px;
+    width: fit-content;
 }
 
 .module-title {
-    font-size: 1.2rem;
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--color-azul-obscuro);
+    line-height: 1.35;
+    padding: 0 16px;
+    margin-bottom: 8px;
+}
+
+.module-card::after {
+    content: "Módulo disponible • Lecciones de estudio";
+    font-size: 0.7rem;
+    color: var(--color-texto-muted);
     font-weight: 600;
-    color: var(--color-texto-main);
-    line-height: 1.45;
-    padding-right: 24px;
+    padding: 0 16px 16px 16px;
+    display: block;
+    margin-top: auto;
 }

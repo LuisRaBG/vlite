@@ -3,45 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plataforma E-Learning | Tema</title>
-    
+    <title>RedBuho vLite - Vista Módulo</title>
+
+    <!-- Hojas de estilo maestra y de detalle del tema -->
     <link rel="stylesheet" href="../../../assets/css/style.css">
     <link rel="stylesheet" href="../../../assets/css/tema_detalle.css">
 </head>
-<body>
-    <nav id="menu-global"></nav>
-    
-    <div class="tema-hero-dark">
-        <div class="app-container hero-inner">
-            <div class="tema-avatar">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-                </svg>
-            </div>
-            <div class="tema-titles">
-                <span class="badge-tag-dark">Programa de Estudio</span>
-                <h1 id="titulo-curso-padre">Cargando curso...</h1>
-                <p>Desarrollo de habilidades y conocimientos fundamentales.</p>
-            </div>
-        </div>
-    </div>
+<body class="dashboard-body">
+    <!-- Contenedor Principal con Layout Estático -->
+    <div class="dashboard-layout">
+        
+        <!-- Sidebar Izquierdo Componentizado (Inyectado por components.js) -->
+        <aside id="app-sidebar"></aside>
 
-    <div class="app-container">
-        <div class="tema-overview">
-            <div class="overview-header">
-                <span class="step-number">❖</span>
-                <h2 id="titulo-tema">Cargando tema...</h2>
-            </div>
-            <p class="overview-desc">En esta lección aprenderás a reconocer y valorar las prácticas de cooperación, intercambio sin dinero y ayuda mutua que tú y tu comunidad ya realizan a diario. Actividades como la faena, el trueque o el préstamo de semillas son formas de economía tan legítimas como cualquier negocio, aunque muchas veces pasan desapercibidas. Al finalizar, podrás ver tu comunidad con otros ojos y entender por qué esta forma de vivir merece el mismo respeto que cualquier otra economía.</p>
-        </div>
+        <!-- Área Central de Contenido -->
+        <main class="main-content">
+            <!-- Barra Superior (Top Header Inyectado por components.js) -->
+            <header id="app-top-header"></header>
 
-        <main class="lessons-section">
-            <ul id="lista-enlaces" class="lessons-grid"></ul>
+            <!-- Contenedor Interno de Contenido (Fondo Blanco + Scroll Vertical) -->
+            <div class="content-body">
+                
+                <!-- Encabezado del Tema (Fondo Azul Claro) -->
+                <header class="topic-hero-card">
+                    <div class="topic-titles">
+                        <span class="badge-tag-light" id="titulo-curso-padre">Cargando curso...</span>
+                        <h1 id="titulo-tema">Cargando tema...</h1>
+                        <p id="descripcion-tema" class="overview-desc">Cargando descripción del módulo...</p>
+                    </div>
+                    
+                    <div class="topic-progress-circle">
+                        <div class="circle-content">
+                            <span class="circle-pct">35%</span>
+                            <span class="circle-label">COMPLETO</span>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- Subtítulo de Estructura -->
+                <div class="section-title-bar">
+                    <h2>Estructura de Lecciones</h2>
+                </div>
+
+                <!-- Lista de Lecciones Inyectadas por JS -->
+                <main class="lessons-section">
+                    <ul id="lista-enlaces" class="lessons-grid"></ul>
+                </main>
+            </div>
         </main>
     </div>
 
-    <script src="../../ESS/manifest.js"></script>
+    <!-- Carga de manifiesto local, estado, componentes y motor principal -->
+    <script src="../manifest.js"></script>
+    <script src="../../../assets/js/storage.js"></script>
+    <script src="../../../assets/js/components.js"></script>
     <script src="../../../assets/js/main.js"></script>
 </body>
 </html>

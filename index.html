@@ -3,39 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plataforma E-Learning | Inicio</title>
+    <title>RedBuho vLite - Vista Main</title>
     
-    <!-- Carga de estilos -->
+    <!-- Carga de estilos maestro e inicio -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/inicio.css"> <!-- El nuevo CSS para esta vista -->
+    <link rel="stylesheet" href="assets/css/inicio.css">
 </head>
-<body>
-    <!-- Menú de navegación (se ocultará inteligentemente en la raíz gracias a main.js) -->
-    <nav id="menu-global"></nav>
-    
-    <div class="app-container">
-        <!-- Banner Principal -->
-        <header class="home-hero">
-            <div class="hero-content">
-                <span class="badge-tag-light">Entorno Portátil Lite</span>
-                <h1>Bienvenido a la Plataforma</h1>
-                <p>Selecciona un programa de estudio para comenzar tu aprendizaje en este entorno virtual offline.</p>
+<body class="dashboard-body">
+    <!-- Contenedor Principal Dashboard con Sidebar Layout -->
+    <div class="dashboard-layout">
+        
+        <!-- Sidebar Izquierdo Estratificado (Inyectado por components.js) -->
+        <aside id="app-sidebar"></aside>
+
+        <!-- Área Central de Contenido -->
+        <main class="main-content">
+            <!-- Barra Superior (Top Header Inyectado por components.js) -->
+            <header id="app-top-header"></header>
+
+            <!-- Contenedor Interno de las Secciones -->
+            <div class="content-body">
+                
+                <!-- Hero / Continuar Aprendizaje -->
+                <section class="continue-learning-card">
+                    <div class="continue-info">
+                        <span class="badge-tag-light">CONTINUAR APRENDIZAJE</span>
+                        <h1>Módulo 2:<br>Fundamentos de la ESS</h1>
+                        
+                        <div class="progress-container">
+                            <div class="progress-label">
+                                <span>Progreso del Módulo</span>
+                                <span class="progress-percentage">0%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%;"></div>
+                            </div>
+                        </div>
+
+                        <button class="btn-primary-action">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            Retomar Lección
+                        </button>
+                    </div>
+
+                    <div class="continue-media">
+                        <div class="media-placeholder"></div>
+                    </div>
+                </section>
+
+                <!-- Cursos Principales -->
+                <section class="courses-section">
+                    <div class="section-header">
+                        <h2>Cursos Principales</h2>
+                        <a href="#" class="see-all-link">Ver todo</a>
+                    </div>
+                    
+                    <!-- Carrusel Horizontal de Cursos -->
+                    <div id="lista-cursos" class="course-carousel"></div>
+                </section>
+
+                <!-- Métricas e Información de Sistema (Grid Inferior) -->
+                <section class="bottom-metrics-grid">
+                    <!-- Resumen de Actividad Local -->
+                    <div class="metrics-card">
+                        <h3>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                            Resumen de Actividad Local
+                        </h3>
+                        <div class="stats-grid">
+                            <div class="stat-box">
+                                <span class="stat-label">LECCIONES COMPLETADAS</span>
+                                <div class="stat-value">0 <span class="stat-sub">/ 42 total</span></div>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-label">TIEMPO DE ESTUDIO</span>
+                                <div class="stat-value">0m</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Estado del Sistema -->
+                    <div class="metrics-card">
+                        <h3>Estado del Sistema</h3>
+                        <div class="system-status-list">
+                            <div class="status-row">
+                                <span>Conexión USB</span>
+                                <strong class="text-active">Activa</strong>
+                            </div>
+                            <div class="status-row">
+                                <span>Espacio Libre</span>
+                                <strong>1.2 GB</strong>
+                            </div>
+                            <div class="status-row">
+                                <span>Caché Local</span>
+                                <strong>450 MB</strong>
+                            </div>
+                        </div>
+                        <button class="btn-secondary-action">Sincronizar ahora</button>
+                    </div>
+                </section>
             </div>
-        </header>
-    
-        <!-- Grid de Cursos -->
-        <main class="courses-section">
-            <div class="section-header">
-                <h2>Cursos Disponibles</h2>
-            </div>
-            
-            <!-- El JS inyectará las tarjetas de los cursos aquí -->
-            <div id="lista-cursos" class="course-grid"></div>
         </main>
     </div>
 
     <!-- Archivo de datos LOCAL global -->
     <script src="manifest.js"></script>
+    <!-- Gestor de Persistencia Local -->
+    <script src="assets/js/storage.js"></script>
+    <!-- Componentes de Navegación Unificados -->
+    <script src="assets/js/components.js"></script>
     <!-- Motor principal -->
     <script src="assets/js/main.js"></script>
 </body>

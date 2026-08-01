@@ -3,39 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenido al Curso</title>
+    <title>RedBuho vLite - Vista Curso</title>
 
+    <!-- Hojas de estilo maestra y de detalle del curso -->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/curso_detalle.css">
 </head>
-<body>
-    <nav id="menu-global"></nav>
-    
-    <div class="app-container">
-        <!-- Cabecera del Curso (Hero Section) -->
-        <header class="hero-section">
-            <div class="hero-content">
-                <span class="badge-tag">Programa de Estudio</span>
-                <h1 id="titulo-curso">Cargando curso...</h1>
-                <p id="descripcion-curso">Preparando el entorno de aprendizaje.</p>
+<body class="dashboard-body">
+    <!-- Contenedor Principal con Layout Estático -->
+    <div class="dashboard-layout">
+        
+        <!-- Sidebar Izquierdo Componentizado (Inyectado por components.js) -->
+        <aside id="app-sidebar"></aside>
+
+        <!-- Área Central de Contenido -->
+        <main class="main-content">
+            <!-- Barra Superior (Top Header Inyectado por components.js) -->
+            <header id="app-top-header"></header>
+
+            <!-- Contenedor Interno de Contenido (Fondo Blanco + Scroll Vertical) -->
+            <div class="content-body">
+                
+                <!-- Hero de Información del Curso (Fondo Azul Claro) -->
+                <header class="catalog-hero-card">
+                    <div class="hero-titles">
+                        <span class="badge-tag-light">PROGRAMA DE ESTUDIO</span>
+                        <h1 id="titulo-curso">Cargando curso...</h1>
+                        <p id="descripcion-curso">Preparando el entorno de aprendizaje.</p>
+                    </div>
+                    
+                    <div class="catalog-badge-counter">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                        <span id="contador-temas">...</span>
+                    </div>
+                </header>
+
+                <!-- Barra de Filtros -->
+                <div class="filter-bar">
+                    <div class="filter-pills">
+                        <button class="pill-item active">Todos</button>
+                        <button class="pill-item">ESS</button>
+                        <button class="pill-item">MEP</button>
+                        <button class="pill-item">Herramientas</button>
+                    </div>
+                    <div class="filter-dropdown">
+                        <span>▼ Filtrar por Nivel</span>
+                    </div>
+                </div>
+
+                <!-- Cuadrícula de Módulos (Inyectada dinámicamente por main.js) -->
+                <main class="modules-section">
+                    <div id="lista-temas" class="catalog-module-grid"></div>
+                </main>
             </div>
-        </header>
-    
-        <!-- Grid de Módulos -->
-        <main class="modules-section">
-            <div class="section-header">
-                <h2>Contenido del Curso</h2>
-                <span id="contador-temas" class="pill-counter">...</span>
-            </div>
-            
-            <!-- El JS inyectará las tarjetas aquí -->
-            <div id="lista-temas" class="module-grid"></div>
         </main>
     </div>
 
-    <!-- Cargamos el motor principal -->
-    <script src="../ESS/manifest.js"></script>
-    
+    <!-- Carga de manifiesto, estado, componentes y motor de JS -->
+    <script src="manifest.js"></script>
+    <script src="../../assets/js/storage.js"></script>
+    <script src="../../assets/js/components.js"></script>
     <script src="../../assets/js/main.js"></script>
 </body>
 </html>

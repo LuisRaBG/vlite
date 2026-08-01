@@ -1,0 +1,19 @@
+// cursos/ESS/T001/L1/manifest.js
+const LECCION_DATA = {
+    "id": "L1",
+    "titulo": "¿Qué es la economía? Lo que ya sabemos y lo que nos enseñaron.",
+    "indicaciones": "En esta actividad reflexionarás sobre tus experiencias previas de cooperación y ayuda mutua en tu comunidad. Lee con atención el siguiente texto.",
+    
+    // Contenido completo de la lección dividido en párrafos
+    "contenido": [
+        "¿Alguna vez ha ayudado a un vecino a levantar la cosecha sin cobrarle nada, sabiendo que él o ella hará lo mismo por usted el día que lo necesite? ¿Ha participado en una faena para arreglar el camino, el templo o la escuela de su comunidad? ¿Ha prestado semillas, herramientas o dinero sin cobrar intereses? Si alguna de estas situaciones le resulta familiar, entonces usted ya practica economía, aunque nadie se lo haya dicho con ese nombre. En esta lección nos vamos a preguntar algo sencillo pero importante: ¿qué es realmente la economía, y quién decide qué cuenta y qué no cuenta como actividad económica?",
+        
+        "Cuando en la escuela, la radio o la televisión se habla de «economía», casi siempre se habla de una sola cosa: comprar, vender, ganar dinero, competir por un lugar en el mercado. Esa es una forma de economía, pero no es la única, y tampoco es la más antigua. Junto a ella, y muchas veces sin que se le reconozca ese nombre, existe otra forma de organizar la vida material de las personas: una economía basada en la cooperación, el intercambio sin dinero de por medio y el cuidado mutuo. A esta segunda forma se le conoce como economía solidaria, y es exactamente lo que muchas familias y comunidades de las Altas Montañas han practicado por generaciones.",
+        
+        "En la Sierra de Zongolica y en otras regiones de las Altas Montañas, la faena —el trabajo colectivo no remunerado para beneficio de todos, como componer un camino o limpiar el manantial— ha sido durante generaciones una forma normal de resolver necesidades comunes. Lo mismo ocurre con el trueque, el intercambio directo de productos sin que medie el dinero: café por maíz, huevos por leña, un favor por otro favor. Estas prácticas no son un invento reciente ni una moda pasajera; son formas de economía tan legítimas y tan antiguas como el mercado, aunque los libros de texto casi nunca las mencionen.",
+        
+        "Con frecuencia escuchamos la idea de que «cada quien tiene que salir adelante por su cuenta», como si el resultado económico dependiera solamente del esfuerzo individual. Sin embargo, cuando observamos con atención la vida de nuestras comunidades, encontramos que las cosas casi nunca funcionan así: la milpa se siembra con ayuda de la familia extendida, el café se levanta con apoyo de vecinos, y en tiempos difíciles —una enfermedad, una mala cosecha— es la red de apoyo comunitario, y no el mercado, la que sostiene a las familias. Reconocer esto no niega el valor del esfuerzo personal; simplemente muestra con claridad que ese esfuerzo casi siempre está entretejido con la cooperación de otros.",
+        
+        "A lo largo de este curso vamos a nombrar y valorar estas prácticas que usted seguramente ya conoce y quizás ya realiza, para entender por qué son una forma de economía tan válida como cualquier otra. En el video que sigue escuchará a personas de comunidades como la suya contar, en sus propias palabras, cómo la cooperación ha sido parte de su vida económica. Después le invitamos a resolver un breve cuestionario con imágenes para reconocer, entre varias situaciones cotidianas, cuáles son ejemplos de economía solidaria."
+    ]
+};
